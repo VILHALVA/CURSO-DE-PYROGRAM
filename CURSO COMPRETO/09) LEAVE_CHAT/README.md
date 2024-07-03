@@ -3,11 +3,10 @@ Para fazer o bot deixar um grupo (sair do grupo) usando Pyrogram, você pode usa
 
 1. **Importe os Módulos Necessários**:
 
-   Certifique-se de importar os módulos necessários do Pyrogram e suas credenciais do arquivo de configuração:
+   Certifique-se de importar os módulos necessários do Pyrogram:
 
    ```python
    from pyrogram import Client
-   from config import API_ID, API_HASH
    import asyncio
    ```
 
@@ -18,7 +17,7 @@ Para fazer o bot deixar um grupo (sair do grupo) usando Pyrogram, você pode usa
    ```python
    async def main():
        # Cria uma instância do cliente Pyrogram
-       async with Client("my_account", api_id=API_ID, api_hash=API_HASH) as app:
+       async with Client("my_account") as app:
            # ID do chat (grupo) que você deseja deixar (substitua com o ID real do chat)
            chat_id = "123456789"
 
@@ -39,4 +38,5 @@ Para fazer o bot deixar um grupo (sair do grupo) usando Pyrogram, você pode usa
 
    - Ao executar este código, o bot sairá do chat (grupo) especificado pelo `chat_id`.
 
-Certifique-se de substituir `chat_id = "123456789"` pelo ID real do chat que você deseja que o bot saia. Isso garante que o Pyrogram possa localizar e sair corretamente do grupo especificado.
+Certifique-se de substituir `chat_id = "123456789"` pelo ID real do chat que você deseja que o bot saia. Isso garantirá que o Pyrogram possa localizar e sair corretamente do grupo especificado.
+

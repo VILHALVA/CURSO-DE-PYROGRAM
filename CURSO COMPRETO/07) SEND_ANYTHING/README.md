@@ -1,13 +1,12 @@
-# SEND_ANYTHING 
-Para enviar qualquer tipo de conteúdo no Pyrogram, você pode usar o método `send_message` e passar o tipo de conteúdo desejado como parâmetro. Aqui está como você pode enviar diferentes tipos de conteúdos usando Pyrogram:
+# SEND_ANYTHING
+Para enviar qualquer tipo de conteúdo no Pyrogram, você pode usar o método apropriado para o tipo de conteúdo desejado. Aqui está como você pode enviar diferentes tipos de conteúdos usando Pyrogram:
 
 1. **Importe os Módulos Necessários**:
 
-   Certifique-se de importar os módulos necessários do Pyrogram e suas credenciais do arquivo de configuração:
+   Certifique-se de importar os módulos necessários do Pyrogram:
 
    ```python
    from pyrogram import Client
-   from config import API_ID, API_HASH
    import asyncio
    ```
 
@@ -18,7 +17,7 @@ Para enviar qualquer tipo de conteúdo no Pyrogram, você pode usar o método `s
    ```python
    async def main():
        # Cria uma instância do cliente Pyrogram
-       async with Client("my_account", api_id=API_ID, api_hash=API_HASH) as app:
+       async with Client("my_account") as app:
            # Envia uma mensagem de texto simples
            await app.send_message("me", text="Olá, mundo!")
 
@@ -60,3 +59,4 @@ Para enviar qualquer tipo de conteúdo no Pyrogram, você pode usar o método `s
    - Ao executar este código, o Pyrogram enviará cada tipo de conteúdo especificado para o seu próprio usuário no Telegram, conforme definido nos respectivos métodos (`send_message`, `send_photo`, `send_document`, `send_video`, `send_location`, `send_contact`).
 
 Certifique-se de substituir os caminhos de arquivos (`"caminho/para/sua/foto.jpg"`, `"caminho/para/seu/documento.pdf"`, `"caminho/para/seu/video.mp4"`) pelos caminhos reais dos arquivos que você deseja enviar. Isso garantirá que o Pyrogram possa localizar e enviar o conteúdo corretamente.
+

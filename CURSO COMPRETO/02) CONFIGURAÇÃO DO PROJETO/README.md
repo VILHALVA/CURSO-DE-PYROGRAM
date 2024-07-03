@@ -67,3 +67,5 @@ Após obter as credenciais (API ID e API Hash) no site do Telegram, o próximo p
 
 Este processo garante que seu bot tenha permissões adequadas para funcionar corretamente dentro das políticas de segurança e privacidade do Telegram.
 
+- [SAIBA MAIS CLICANDO AQUI](https://docs.pyrogram.org/start/auth)
+

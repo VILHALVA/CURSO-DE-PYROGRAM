@@ -1,14 +1,13 @@
 # INLINE_QUERIES
-Para lidar com consultas inline (inline queries) usando Pyrogram, você precisa configurar um manipulador de eventos para capturar quando um usuário faz uma consulta inline. Aqui está como você pode implementar isso:
+Para lidar com consultas inline usando Pyrogram e responder aos usuários com resultados relevantes, aqui está um exemplo detalhado:
 
 1. **Importe os Módulos Necessários**:
 
-   Certifique-se de importar os módulos necessários do Pyrogram e suas credenciais do arquivo de configuração:
+   Importe os módulos essenciais do Pyrogram e os tipos necessários:
 
    ```python
-   from pyrogram import Client, filters
+   from pyrogram import Client
    from pyrogram.types import InlineQuery, InlineQueryResultArticle, InputTextMessageContent
-   from config import API_ID, API_HASH
    import asyncio
    ```
 
@@ -19,13 +18,13 @@ Para lidar com consultas inline (inline queries) usando Pyrogram, você precisa 
    ```python
    async def main():
        # Cria uma instância do cliente Pyrogram
-       async with Client("my_account", api_id=API_ID, api_hash=API_HASH) as app:
+       async with Client("my_account") as app:
            # Define o manipulador para InlineQuery
            @app.on_inline_query()
            async def inline_query(client, query: InlineQuery):
                results = []
 
-               # Obtém o texto da consulta
+               # Obtém o texto da consulta e converte para minúsculas
                query_text = query.query.lower()
 
                # Cria resultados de consulta inline baseados na consulta
@@ -71,6 +70,6 @@ Para lidar com consultas inline (inline queries) usando Pyrogram, você precisa 
 
 4. **Execução**:
 
-   - Ao executar este código, o Pyrogram estará pronto para lidar com consultas inline. Quando um usuário digitar uma consulta inline que contenha "hello" ou "bye", o bot responderá com opções apropriadas.
+   - Ao executar este código, o Pyrogram estará pronto para lidar com consultas inline. Quando um usuário digitar uma consulta inline que contenha "hello", o bot responderá com uma saudação e, se a consulta conter "bye", responderá com uma despedida.
 
-Certifique-se de personalizar a lógica de criação de resultados de consulta inline (`InlineQueryResultArticle`) conforme necessário para suas necessidades específicas. Isso pode incluir a geração de resultados dinâmicos com base em dados externos ou APIs.
+Este exemplo mostra como responder a consultas inline simplesmente verificando o texto da consulta e criando resultados de consulta inline correspondentes. Você pode expandir essa lógica para incluir consultas mais complexas ou para integrar com APIs externas para obter resultados dinâmicos.

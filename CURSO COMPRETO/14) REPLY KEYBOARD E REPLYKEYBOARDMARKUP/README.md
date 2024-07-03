@@ -1,5 +1,5 @@
 # REPLY KEYBOARD E REPLYKEYBOARDMARKUP
-Para criar um teclado de resposta personalizado (Reply Keyboard) usando Pyrogram, você pode usar a classe `ReplyKeyboardMarkup` e enviar este teclado junto com uma mensagem. Aqui está como você pode implementar isso:
+Para criar e enviar um teclado de resposta personalizado usando Pyrogram, aqui está como você pode implementar:
 
 1. **Importe os Módulos Necessários**:
 
@@ -8,7 +8,6 @@ Para criar um teclado de resposta personalizado (Reply Keyboard) usando Pyrogram
    ```python
    from pyrogram import Client
    from pyrogram.types import ReplyKeyboardMarkup, KeyboardButton
-   from config import API_ID, API_HASH
    import asyncio
    ```
 
@@ -19,7 +18,7 @@ Para criar um teclado de resposta personalizado (Reply Keyboard) usando Pyrogram
    ```python
    async def main():
        # Cria uma instância do cliente Pyrogram
-       async with Client("my_account", api_id=API_ID, api_hash=API_HASH) as app:
+       async with Client("my_account") as app:
            # ID do chat (usuário ou grupo) para onde você deseja enviar a mensagem
            chat_id = "123456789"
 

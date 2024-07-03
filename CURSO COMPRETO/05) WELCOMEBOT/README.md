@@ -3,11 +3,10 @@ Para criar um bot de boas-vindas usando Pyrogram, você pode seguir um exemplo b
 
 1. **Importe os Módulos Necessários**:
 
-   Certifique-se de importar os módulos necessários do Pyrogram e suas credenciais do arquivo de configuração:
+   Certifique-se de importar os módulos necessários do Pyrogram:
 
    ```python
    from pyrogram import Client, filters
-   from config import API_ID, API_HASH
    import asyncio
    ```
 
@@ -18,7 +17,7 @@ Para criar um bot de boas-vindas usando Pyrogram, você pode seguir um exemplo b
    ```python
    async def main():
        # Cria uma instância do cliente Pyrogram
-       async with Client("my_account", api_id=API_ID, api_hash=API_HASH) as app:
+       async with Client("my_account") as app:
            # Define um manipulador para novos membros entrando no grupo
            @app.on_chat_member(filters.new_chat_members)
            async def welcome(client, message):
@@ -51,3 +50,4 @@ Para criar um bot de boas-vindas usando Pyrogram, você pode seguir um exemplo b
    - Ao executar este código, o bot começará a escutar novos membros que entram no grupo e enviará uma mensagem de boas-vindas personalizada para cada um deles.
 
 Este exemplo básico pode ser expandido com lógicas adicionais, como enviar mensagens de boas-vindas para novos membros em grupos específicos, personalizar mensagens com emojis, etc. Adaptando e melhorando conforme necessário, você pode criar um bot de boas-vindas mais sofisticado para atender às necessidades do seu grupo no Telegram.
+

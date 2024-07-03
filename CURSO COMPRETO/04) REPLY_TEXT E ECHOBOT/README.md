@@ -3,11 +3,10 @@ Para criar um bot que responde a mensagens usando `reply_text` e que funcione co
 
 1. **Importe os Módulos Necessários**:
 
-   Certifique-se de importar os módulos necessários do Pyrogram e suas credenciais do arquivo de configuração:
+   Certifique-se de importar os módulos necessários do Pyrogram:
 
    ```python
    from pyrogram import Client, filters
-   from config import API_ID, API_HASH
    import asyncio
    ```
 
@@ -18,7 +17,7 @@ Para criar um bot que responde a mensagens usando `reply_text` e que funcione co
    ```python
    async def main():
        # Cria uma instância do cliente Pyrogram
-       async with Client("my_account", api_id=API_ID, api_hash=API_HASH) as app:
+       async with Client("my_account") as app:
            # Define um manipulador para mensagens recebidas
            @app.on_message(filters.me)
            async def echo(client, message):
@@ -49,3 +48,4 @@ Para criar um bot que responde a mensagens usando `reply_text` e que funcione co
    - Ao executar este código, o bot começará a escutar as mensagens enviadas para ele. Quando receber uma mensagem, ele responderá com a mesma mensagem (funcionamento básico de um echobot).
 
 Este exemplo é um ponto de partida simples. Você pode expandir esse bot adicionando lógicas mais complexas, manipulando diferentes tipos de mensagens, incorporando comandos personalizados e muito mais, dependendo dos requisitos do seu projeto.
+

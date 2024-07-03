@@ -1,14 +1,13 @@
 # CALLBACKQUERY
-Para lidar com `CallbackQuery` (consultas de callback) usando Pyrogram, você precisa configurar um manipulador de eventos para capturar quando um usuário interage com um botão inline e envia uma `CallbackQuery`. Aqui está como você pode implementar isso:
+Para lidar com `CallbackQuery` usando Pyrogram e responder às interações dos usuários com botões inline, aqui está o passo a passo detalhado:
 
 1. **Importe os Módulos Necessários**:
 
-   Certifique-se de importar os módulos necessários do Pyrogram e suas credenciais do arquivo de configuração:
+   Primeiro, importe os módulos essenciais do Pyrogram, incluindo os tipos necessários e suas credenciais do arquivo de configuração:
 
    ```python
    from pyrogram import Client, filters
    from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
-   from config import API_ID, API_HASH
    import asyncio
    ```
 
@@ -19,8 +18,9 @@ Para lidar com `CallbackQuery` (consultas de callback) usando Pyrogram, você pr
    ```python
    async def main():
        # Cria uma instância do cliente Pyrogram
-       async with Client("my_account", api_id=API_ID, api_hash=API_HASH) as app:
-           # Define o manipulador para CallbackQuery
+       async with Client("my_account") as app:
+           
+           # Manipulador para CallbackQuery
            @app.on_callback_query()
            async def callback_handler(client, callback: CallbackQuery):
                # Obtém os dados do callback (callback_data)

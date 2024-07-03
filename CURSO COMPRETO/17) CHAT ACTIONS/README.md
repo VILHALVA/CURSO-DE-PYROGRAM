@@ -1,5 +1,5 @@
 # CHAT ACTIONS
-Em Pyrogram, para simular ações visuais como "digitando" ou "enviando fotos" em um chat, você pode utilizar os métodos fornecidos pela biblioteca para fornecer uma experiência mais interativa aos usuários. Aqui está como você pode implementar algumas dessas ações:
+Em Pyrogram, você pode simular ações visuais como "digitando", "enviando foto" ou "enviando vídeo" utilizando os métodos fornecidos pela biblioteca. Aqui estão exemplos detalhados de como implementar essas ações:
 
 ## Exemplos de Chat Actions com Pyrogram:
 1. **Exemplo de Digitando (Typing)**:

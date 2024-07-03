@@ -3,11 +3,10 @@ Para excluir mensagens usando Pyrogram, você pode usar o método `delete_messag
 
 1. **Importe os Módulos Necessários**:
 
-   Certifique-se de importar os módulos necessários do Pyrogram e suas credenciais do arquivo de configuração:
+   Certifique-se de importar os módulos necessários do Pyrogram:
 
    ```python
    from pyrogram import Client
-   from config import API_ID, API_HASH
    import asyncio
    ```
 
@@ -18,7 +17,7 @@ Para excluir mensagens usando Pyrogram, você pode usar o método `delete_messag
    ```python
    async def main():
        # Cria uma instância do cliente Pyrogram
-       async with Client("my_account", api_id=API_ID, api_hash=API_HASH) as app:
+       async with Client("my_account") as app:
            # ID da mensagem que você deseja excluir (substitua com o ID real da mensagem)
            message_id = 123456789
 
@@ -40,4 +39,5 @@ Para excluir mensagens usando Pyrogram, você pode usar o método `delete_messag
 
    - Ao executar este código, o Pyrogram excluirá a mensagem especificada pelo ID `message_id`.
 
-Certifique-se de substituir `message_id = 123456789` pelo ID real da mensagem que você deseja excluir. Isso garante que o Pyrogram possa localizar e excluir a mensagem corretamente.
+Certifique-se de substituir `message_id = 123456789` pelo ID real da mensagem que você deseja excluir. Isso garantirá que o Pyrogram possa localizar e excluir a mensagem corretamente.
+

@@ -3,11 +3,10 @@ Para enviar uma foto usando Pyrogram, você pode usar o método `send_photo` do 
 
 1. **Importe os Módulos Necessários**:
 
-   Certifique-se de importar os módulos necessários do Pyrogram e suas credenciais do arquivo de configuração:
+   Certifique-se de importar os módulos necessários do Pyrogram:
 
    ```python
-   from pyrogram import Client, filters
-   from config import API_ID, API_HASH
+   from pyrogram import Client
    import asyncio
    ```
 
@@ -18,7 +17,7 @@ Para enviar uma foto usando Pyrogram, você pode usar o método `send_photo` do 
    ```python
    async def main():
        # Cria uma instância do cliente Pyrogram
-       async with Client("my_account", api_id=API_ID, api_hash=API_HASH) as app:
+       async with Client("my_account") as app:
            # Envia uma foto para o seu próprio usuário no Telegram
            await app.send_photo("me", photo="caminho/para/sua/foto.jpg", caption="Minha foto enviada via Pyrogram!")
 
@@ -39,3 +38,4 @@ Para enviar uma foto usando Pyrogram, você pode usar o método `send_photo` do 
    - Ao executar este código, o Pyrogram enviará a foto especificada para o seu próprio usuário no Telegram, com a legenda opcional.
 
 Certifique-se de substituir `"caminho/para/sua/foto.jpg"` pelo caminho real da foto que você deseja enviar. Isso garantirá que o Pyrogram possa localizar e enviar a foto corretamente.
+
